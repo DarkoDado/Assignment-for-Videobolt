@@ -1,0 +1,45 @@
+.footer {
+  background-color: var(--background-footer-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+    color: #02040e;
+    margin: 5px 0;
+    &:hover {
+      color: blue;
+    }
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
+  }
+  span > h4 {
+    text-transform: uppercase;
+    background-color: black;
+    padding: 4px 8px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 6px;
+    &:hover {
+      color: var(--light-blue);
+    }
+  }
+  .icons {
+    display: flex;
+    margin-bottom: 15px;
+    svg {
+        transition: .2s ease-in;
+      font-size: 30px;
+      margin: 5px 10px;
+      cursor: pointer;
+      &:hover {
+        color: var(--light-blue);
+      }
+    }
+  }
+}

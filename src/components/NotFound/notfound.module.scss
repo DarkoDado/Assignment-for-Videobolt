@@ -1,0 +1,128 @@
+.cont {
+    display: block;
+.coverImg {
+ 
+  background-image: url("../../img/notfoundMacak.png");
+  background-color: black;
+  height: 220px;
+  width: 300px;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.notfoundText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 45px;
+  margin-top: 50px;
+  align-items: center;
+  text-align: center;
+  span:last-of-type {
+    font-weight: bold;
+    font-size: 35px;
+  }
+  svg {
+    align-items: center;
+    margin-top: 80px;
+    color: var(--light-blue);
+ 
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 40px;
+    max-width: 30%;
+    padding: 5px 25px;
+    border: none;
+    background-color: var(--light-blue);
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-bottom: 80px;
+    svg {
+       color: black;
+       font-size: 31px;
+       margin-bottom: 80px;
+        margin-right: 10px;
+    }
+    &:hover {
+        background-color: var(--link-ligh-hover);
+    }
+  }
+}
+}
+@media only screen and (min-width: 768px) {
+    .cont {
+      display: flex;
+    .coverImg {
+        width: 400px;
+        height: 300px;
+        margin-left: 50px;
+        margin: 0;
+    }
+    .notfoundText {
+        font-size: 30px;
+    }
+    button {
+        max-width: 50%;
+    }
+}
+}
+@media only screen and (min-width: 960px) {
+    .cont {
+        
+    .coverImg {
+        background-image: url("../../img/notfoundMacak.png");
+        background-color: black;
+        height: 500px;
+        width: 600px;
+ 
+        margin-left: 120px;
+        margin-bottom: 30px;
+      }
+      
+      .notfoundText {
+        display: flex;
+        flex-direction: column;
+        font-size: 45px;
+        margin-top: 50px;
+        align-items: center;
+        text-align: center;
+        span:last-of-type {
+          font-weight: bold;
+          font-size: 35px;
+        }
+        svg {
+          align-items: center;
+          margin-top: 80px;
+          color: var(--light-blue);
+        }
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-height: 40px;
+          max-width: 30%;
+          padding: 5px 25px;
+          border: none;
+          background-color: var(--light-blue);
+          border-radius: 5px;
+          margin-top: 15px;
+          font-size: 17px;
+          cursor: pointer;
+          svg {
+             color: black;
+             font-size: 31px;
+             margin-bottom: 80px;
+              margin-right: 10px;
+          }
+          &:hover {
+              background-color: var(--link-ligh-hover);
+          }
+        }
+      }
+}
+}
