@@ -6,6 +6,8 @@ import { NotFound } from './components/NotFound/NotFound';
 import { Support } from './components/support/Support';
 import { Scoreboard } from './components/Scoreboard/Scoreboard';
 
+import { Game } from './components/Game/Game';
+
 function App() {
   return (
     <div className='container'>
@@ -17,6 +19,7 @@ function App() {
           <Route path='/' element={<Scoreboard />} />
 
         </Routes>
+        <Game />
         <Footer to='' />
         <Support />
       </BrowserRouter>
