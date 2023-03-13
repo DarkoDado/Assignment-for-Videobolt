@@ -1,6 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import gameSlice from './initialState'
 
+
+
 const rootReducer = combineReducers({
     game: gameSlice
 })
