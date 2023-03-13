@@ -20,9 +20,10 @@ export const Players = () => {
       const newPlayer = {
         id: playersList.length +1 || 0,
         name: name,
-        score: 0,
+        score: 501,
         penalty: 0,
-        hits: 0
+        hits: 0,
+        winner: false
       }
       
       // setRefreshedPlayers([...refreshedPlayers, newPlayer])

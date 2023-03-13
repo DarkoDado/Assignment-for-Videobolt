@@ -3,6 +3,7 @@ import { REMOVE_PLAYER } from '../../store/initialState';
 export type PlayersType = {
     name: string,
     id:number,
+    winner: boolean
     score:number,
     penalty:number,
     hits:number

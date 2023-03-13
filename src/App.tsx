@@ -7,6 +7,7 @@ import { Support } from './components/support/Support';
 import { Scoreboard } from './components/Scoreboard/Scoreboard';
 
 import { Game } from './components/Game/Game';
+import { Winner } from './components/Winner/Winner';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path='*' element={<NotFound />} />
           <Route path='/' element={<Scoreboard />} />
-
+          <Route path="/winner" element={<Winner/>} />
         </Routes>
         <Game />
         <Footer to='' />
