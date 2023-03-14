@@ -3,10 +3,10 @@ import { REMOVE_PLAYER } from '../../store/initialState';
 export type PlayersType = {
     name: string,
     id:number,
-    winner: boolean
+    winner: boolean| null
     score:number,
     penalty:number,
-    hits:number
+    hits:number,
 }
 
 export const Player = ({name, id}: PlayersType) => {

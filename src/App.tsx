@@ -8,6 +8,8 @@ import { Scoreboard } from './components/Scoreboard/Scoreboard';
 
 import { Game } from './components/Game/Game';
 import { Winner } from './components/Winner/Winner';
+import { Players } from './components/Players/Players';
+import { GameScreen } from './components/Game/GameScreen';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route path='*' element={<NotFound />} />
           <Route path='/' element={<Scoreboard />} />
           <Route path="/winner" element={<Winner/>} />
+
         </Routes>
         <Game />
         <Footer to='' />

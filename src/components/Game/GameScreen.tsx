@@ -1,6 +1,6 @@
 import { PlayersType } from "../Players/Player"
 import { useSelector, useDispatch } from 'react-redux';
-import { players, RESET_GAME } from '../../store/initialState';
+import { isGameStarted, players, RESET_GAME } from '../../store/initialState';
 import { Score } from './Score';
 import { Winner } from "../Winner/Winner";
 interface GameScreenProps {
@@ -8,15 +8,15 @@ interface GameScreenProps {
 }
 
 
-export const GameScreen = ({ currentPlayerS, onThrowDart, score, isGameOver, winner }: any) => {
+export const GameScreen = ({ setThrowCount, currentPlayerS, onThrowDart, score, isGameOver, winner, resetGame }: any) => {
+    const startGame = useSelector(isGameStarted)
     const dispatch = useDispatch()
-    const handleReset = () => {
-        dispatch(RESET_GAME({}))
-    }
+
+
     const playersList = useSelector(players)
     return (
         <div>
-            {isGameOver && winner ? (<Winner winner={winner}/>) : (
+            {isGameOver   ? (<Winner/>) : (
                  (playersList.map((player: PlayersType) => (
                     <div key={player.id}>
                         <p>{player.name}</p>
@@ -25,7 +25,7 @@ export const GameScreen = ({ currentPlayerS, onThrowDart, score, isGameOver, win
                         )}
                         <p>Igraci :
                             
-                            <button onClick={handleReset}>Resetuj igru</button>
+                            <button onClick={resetGame}>Resetuj igru</button>
     
                             <p>Trenutni igrac na potezu: {currentPlayerS?.name}</p>
                             <Score onThrowDart={onThrowDart} score={score} /></p>
