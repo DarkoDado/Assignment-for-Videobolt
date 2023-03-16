@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  .showGame {
+    display: none;
+  }
+  .playerFunc {
+    background-color: rgba($color: #746f6f, $alpha: 0.1);
+    box-shadow: 2px 1px 23px;
+    border-radius: 5px;
+    width: 150px;
+    margin: 10px;
+    padding: 20px;
+    flex-direction: column;
+    p {
+      padding: 8px 17px;
+      &:hover {
+        background-color: var(--light-blue);
+        border-radius: 3px;
+      }
+    }
+    p:nth-of-type(2) {
+      font-size: 18px;
+    }
+    p:nth-of-type(3) {
+      font-size: 18px;
+      color: red;
+      font-weight: bold;
+    }
+  }
+  .startGameBtn {
+    border: none;
+    color: #fff;
+    background-color: var(--light-blue);
+    cursor: pointer;
+    transition: 0.2s ease-in all;
+    border-radius: 3px;
+    font-size: 18px;
+    &:hover {
+      background-color: blue;
+    }
+  }
+  .playerBtn {
+    display: block;
+    margin: 0 auto;
+    margin-left: 20px;
+    background-color: rgba(252, 85, 85, 0.2);
+    margin-top: 10px;
+    border-radius: 7px;
+    padding: 2px 15px;
+    height: 100px;
+    span {
+      color: red;
+    }
+    
+  }
+  .hits {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 3px 10px;
+    border-radius: 7px;
+    background-color: rgba(252, 85, 85, 0.2);
+    max-width: 150px;
+    color: black;
+  }
+  .btnGame {
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: var(--light-blue);
+    color: #fff;
+    transition: .3s ease-out;
+    border-radius: 3px;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  .blink {
+    animation: blink 1s infinite;
+    margin: 20px;
+  }
+  
+  @keyframes blink {
+
+    50% {
+      opacity: 0.5;
+      transform: scale(1.3);
+      color: blue;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 960px) {
+  .container {
+ 
+    .playerFunc {
+      display: flex;
+      flex-wrap: wrap;
+      width: 150px;
+    }
+  }
+}

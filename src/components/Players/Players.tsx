@@ -1,10 +1,8 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { players, ADD_PLAYER } from '../../store/initialState';
-import { PlayersType } from './Player';
-import { Player } from './Player';
+import { Player, PlayersType } from './Player';
 import styles from './players.module.scss'
-
 
 export const Players = () => {
   const dispatch = useDispatch()
@@ -12,46 +10,37 @@ export const Players = () => {
   // const [refreshedPlayers, setRefreshedPlayers] = useState(playersList)
 
   const [name, setName] = useState('')
-  const handleAddPlayer = (event: React.FormEvent<HTMLFormElement>) => {
 
-    event.preventDefault()
+  const handleAddPlayer = (event: React.FormEvent<HTMLFormElement>) => {
+ event.preventDefault()
 
     if (name && name.trim() !== '') {
       const newPlayer = {
-        id: playersList.length +1 || 0,
+        id: (playersList.length+1) -1,
         name: name,
         score: 501,
         penalty: 0,
-        hits: 0,
-        winner: false
+        hits: [],
+        winner: false,
       }
-      
-      // setRefreshedPlayers([...refreshedPlayers, newPlayer])
-      dispatch(ADD_PLAYER(newPlayer )) 
+
+      dispatch(ADD_PLAYER(newPlayer ))
       setName('')
     }
-
   }
-  // const addPlayer: React.FC = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   event.preventDefault()
-  //   if(!input.value.trim()) 
-  //   return
-
-  // }
-  console.log(playersList)
-
 
   return (
     <div className={styles.players}>
       <form onSubmit={handleAddPlayer}>
-        <input type="text" value={name} onChange={e => setName(e.target.value)} />
-        <button type="submit">Dodaj igraca</button>
+        <input type="text" placeholder='Ime igraca...' value={name} onChange={e => setName(e.target.value)} />
+        <button className={styles.addPlayerBtn} type="submit">Dodaj igraca</button>
       </form>
-      <h3>Igraci</h3>
+      <h2>Igraci</h2>
+
       {playersList.map((player: PlayersType) => {
         return (
-          <Player key={player.id} {...player} />
-        )
+        <div key={player.id}><><Player key={player.id} {...player} />
+          </></div>)
       })}</div>
   )
 }

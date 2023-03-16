@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'standard-with-typescript'
+    // "plugin:@typescript-eslint/recommended"
   ],
   overrides: [
   ],
@@ -14,10 +15,14 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module'
+    // project: './tsconfig.json'
   },
   plugins: [
-    'react'
+    'react',
+    '@typescript-eslint',
+    '@typescript-eslint'
   ],
   rules: {
+    // "@typescript-eslint/dot-notation": "error"
   }
 }

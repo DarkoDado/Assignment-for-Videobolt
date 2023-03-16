@@ -1,38 +1,35 @@
 import { PlayersType } from "../Players/Player"
-import { useSelector, useDispatch } from 'react-redux';
-import { isGameStarted, players, RESET_GAME } from '../../store/initialState';
-import { Score } from './Score';
-import { Winner } from "../Winner/Winner";
-interface GameScreenProps {
-    playersList: PlayersType;
-}
+import { useSelector } from 'react-redux';
+import { players, selectCurrentPlayer } from '../../store/initialState';
+import { Winner } from '../Winner/Winner';
+import styles from './styles.module.scss'
 
-
-export const GameScreen = ({ setThrowCount, currentPlayerS, onThrowDart, score, isGameOver, winner, resetGame }: any) => {
-    const startGame = useSelector(isGameStarted)
-    const dispatch = useDispatch()
-
-
+export const GameScreen = ({  currentPlayerS, throwDart, isGameOver }: any) => {
     const playersList = useSelector(players)
+
     return (
-        <div>
-            {isGameOver   ? (<Winner/>) : (
-                 (playersList.map((player: PlayersType) => (
-                    <div key={player.id}>
+        <div className={styles.container}>
+            {isGameOver ? (<Winner />) : (
+                (playersList.map((player: PlayersType) => (
+                    
+                    <div key={player.id} className={styles.playerFunc}>
+                        <p>Igrac {player.id + 1}</p>
                         <p>{player.name}</p>
-                        {player.id === currentPlayerS?.id && (
-                            <p>Poeni: {currentPlayerS?.score}</p>
-                        )}
-                        <p>Igraci :
-                            
-                            <button onClick={resetGame}>Resetuj igru</button>
-    
-                            <p>Trenutni igrac na potezu: {currentPlayerS?.name}</p>
-                            <Score onThrowDart={onThrowDart} score={score} /></p>
+                        <p>Poeni: {player.score}</p>
+
+                        <div className={styles.hits}>
+                            <h4>Trenutni pogoci: </h4>
+                            <p>{player.hits.join(", ")}</p>
+
+                        </div>
                     </div>
+                    
                 )))
-            )}
-           
+
+            )} {!isGameOver && <><div className={styles.playerBtn}><h3>Igrac na potezu: <span>{currentPlayerS?.name}</span></h3>
+                <button className={styles.btnGame} onClick={throwDart}>Baci Strelicu</button></div></>
+            }
         </div>
     )
 }
+
