@@ -14,7 +14,7 @@ function App (): JSX.Element {
         <Header />
         <Routes>
           <Route path='*' element={<NotFound />} />
-          <Route path='/game' element={<Game />} />
+          <Route path='/game1' element={<Game />} />
         </Routes>
         <Footer to='' />
         <Support />
