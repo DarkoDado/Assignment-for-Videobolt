@@ -1,6 +1,7 @@
 import styles from './notfound.module.scss'
 import { BsExclamationTriangle } from 'react-icons/bs'
 import { IoIosArrowRoundBack } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 export const NotFound = () => {
   return (
@@ -11,7 +12,7 @@ export const NotFound = () => {
         <span><BsExclamationTriangle /></span>
         <span>404 - Not Found</span>
 
-          <button><IoIosArrowRoundBack />Home</button>
+          <button><IoIosArrowRoundBack /><Link to="/game">Home</Link></button>
 
       </div>
 

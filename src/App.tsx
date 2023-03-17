@@ -1,15 +1,15 @@
-import './App.scss';
-import { Footer } from './components/Footer/Footer';
-import { Header } from './components/Header/Header';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { NotFound } from './components/NotFound/NotFound';
-import { Support } from './components/support/Support';
-import { Game } from './components/Game/Game';
+import './App.scss'
+import React from 'react'
+import { Footer } from './components/Footer/Footer'
+import { Header } from './components/Header/Header'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { NotFound } from './components/NotFound/NotFound'
+import { Support } from './components/support/Support'
+import { Game } from './components/Game/Game'
 
-function App() {
+function App (): JSX.Element {
   return (
     <div className='container'>
-
       <BrowserRouter>
         <Header />
         <Routes>
@@ -20,7 +20,7 @@ function App() {
         <Support />
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

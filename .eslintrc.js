@@ -1,28 +1,19 @@
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true
-  },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript'
-    // "plugin:@typescript-eslint/recommended"
+{
+  "parser"; "@typescript-eslint/parser",
+  "parserOptions"; {
+    "project"; "./tsconfig.json",
+    "ecmaVersion"; 2021,
+    "sourceType"; "module",
+    "ecmaFeatures"; {
+      "jsx"; true
+    }
+  }
+  "plugins"; ["@typescript-eslint"],
+  "extends"; [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
-  overrides: [
-  ],
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-    // project: './tsconfig.json'
-  },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    '@typescript-eslint'
-  ],
-  rules: {
-    // "@typescript-eslint/dot-notation": "error"
+  "rules"; {
   }
 }
