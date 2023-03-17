@@ -16,7 +16,7 @@ function App (): JSX.Element {
           <Route path='*' element={<NotFound />} />
           <Route path='/game1' element={<Game />} />
         </Routes>
-        <Footer to='' />
+        <Footer />
         <Support />
       </BrowserRouter>
     </div>

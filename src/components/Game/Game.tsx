@@ -28,7 +28,7 @@ export const Game = (): JSX.Element => {
   const currentPlayerFromStore = useSelector(selectCurrentPlayer)
 
   const handleStartGame = (): void => {
-    dispatch(START_GAME(true))
+    dispatch(START_GAME())
     setIsGameOver(false)
   }
 
@@ -92,7 +92,7 @@ export const Game = (): JSX.Element => {
   useEffect(() => {
     if (throwCount >= 3) {
       nextPlayer()
-      dispatch(NEXT_PLAYER({}))
+      dispatch(NEXT_PLAYER())
       setThrowCount(0)
     }
   }, [currentPlayerScore])

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import styles from "./footer.module.scss"
 import { FaFacebook } from 'react-icons/fa'
 import { BsYoutube } from 'react-icons/bs'
@@ -6,11 +5,8 @@ import { BsTwitter } from 'react-icons/bs'
 import { ImLinkedin } from 'react-icons/im'
 import { BsInstagram } from 'react-icons/bs'
 
-type Props = {
-    to: string
-}
-let date = new Date().getFullYear();
-export const Footer = ({ to }: Props) => {
+const date = new Date().getFullYear();
+export const Footer = () => {
     return (
         <div className={styles.footer}>
             <h3>Company</h3>

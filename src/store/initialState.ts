@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface RootState {
   game: {
@@ -19,11 +19,6 @@ export type PlayersArray = Player[]
 interface PresentState {
   players: Player[]
   currentPlayerId: number
-  gameStage: number
-  lastHit: any
-  currentRound: number
-  winner: Player | null
-  rounds: number
   isGameStarted: boolean
 };
 
@@ -51,11 +46,11 @@ const gameSlice = createSlice({
     ADD_PLAYER: (state, action: PayloadAction<Player>) => {
       state.present.players.push(action.payload)
     },
-    START_GAME: (state, action) => {
+    START_GAME: (state) => {
       state.present.isGameStarted = true
       state.present.currentPlayerId = 0
     },
-    NEXT_PLAYER: (state, action) => {
+    NEXT_PLAYER: (state) => {
       const nextPlayerIndex = (state.present.currentPlayerId + 1) % state.present.players.length
       state.present.currentPlayerId = nextPlayerIndex
     },
